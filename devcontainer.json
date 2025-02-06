@@ -1,0 +1,14 @@
+{
+    "name": "Android Emulator",
+    "build": {
+        "dockerfile": "../Dockerfile"
+    },
+    "runArgs": ["--privileged"],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+        "ms-azuretools.vscode-docker"
+    ],
+    "postCreateCommand": "sdkmanager --install 'system-images;android-30;default;x86_64' && avdmanager create avd -n test -k 'system-images;android-30;default;x86_64'"
+}
